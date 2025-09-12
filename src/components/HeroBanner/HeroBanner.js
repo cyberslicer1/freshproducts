@@ -6,7 +6,7 @@ const HeroBanner = () => {
     <div className="hero-banner">
       <div className="container">
         <div className="hero-banner__content">
-          <h1>Fresh Fruits & Vegetables</h1>
+          <h1>Fresh Fruits & Vegetables available here</h1>
           <p>Locally sourced, organically grown, delivered fresh to your door</p>
           <button className="hero-banner__button">Shop Now</button>
         </div>
