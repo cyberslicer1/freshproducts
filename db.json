@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Demo User",
+      "email": "demo@example.com",
+      "password": "password123",
+      "phone": "+1234567890",
+      "address": "123 Main St, City, State 12345",
+      "createdAt": "2024-01-15T10:00:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Fresh Apples",
+      "price": 2.99,
+      "category": "fruits",
+      "image": "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400",
+      "description": "Crisp and sweet organic apples",
+      "unit": "kg"
+    },
+    {
+      "id": 2,
+      "name": "Organic Bananas",
+      "price": 1.99,
+      "category": "fruits",
+      "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400",
+      "description": "Fresh organic bananas",
+      "unit": "bunch"
+    },
+    {
+      "id": 3,
+      "name": "Sweet Strawberries",
+      "price": 4.99,
+      "category": "fruits",
+      "image": "https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=400",
+      "description": "Sweet fresh strawberries",
+      "unit": "box"
+    },
+    {
+      "id": 4,
+      "name": "Juicy Oranges",
+      "price": 3.49,
+      "category": "fruits",
+      "image": "https://images.unsplash.com/photo-1547514701-42782101795e?w=400",
+      "description": "Fresh juicy oranges",
+      "unit": "kg"
+    }
+  ]
+}

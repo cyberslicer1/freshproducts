@@ -1,0 +1,166 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  @include flex-column;
+
+  &:hover {
+    @include hover-effect;
+  }
+
+  &__image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+
+    @include responsive($breakpoint-md) {
+      height: 180px;
+    }
+
+    @include responsive($breakpoint-sm) {
+      height: 160px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  &__category {
+    position: absolute;
+    top: $spacing-sm;
+    right: $spacing-sm;
+    background: $primary-color;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__content {
+    padding: $spacing-md;
+    flex: 1;
+    @include flex-column;
+    gap: $spacing-sm;
+
+    @include responsive($breakpoint-md) {
+      padding: $spacing-sm;
+    }
+  }
+
+  &__name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    margin: 0;
+    @include text-ellipsis;
+
+    @include responsive($breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+
+  &__description {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 1;
+
+    @include responsive($breakpoint-md) {
+      font-size: 0.85rem;
+    }
+  }
+
+  &__footer {
+    @include flex-between;
+    align-items: center;
+    margin-top: auto;
+    gap: $spacing-sm;
+
+    @include responsive($breakpoint-sm) {
+      flex-direction: column;
+      align-items: stretch;
+      gap: $spacing-xs;
+    }
+  }
+
+  &__price {
+    font-weight: bold;
+    color: $primary-color;
+    font-size: 1.1rem;
+    white-space: nowrap;
+
+    @include responsive($breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+
+  &__button {
+    background: $primary-color;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+    @include responsive($breakpoint-md) {
+      padding: 6px 12px;
+      font-size: 0.85rem;
+    }
+
+    @include responsive($breakpoint-sm) {
+      width: 100%;
+    }
+
+    &:hover {
+      background: darken($primary-color, 10%);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Grid layout adjustments for different screen sizes
+.products-grid {
+  .product-card {
+    @include responsive($breakpoint-xl) {
+      // 3 columns
+    }
+
+    @include responsive($breakpoint-md) {
+      // 2 columns
+    }
+
+    @include responsive($breakpoint-sm) {
+      // 1 column
+      max-width: 320px;
+      margin: 0 auto;
+    }
+  }
+}

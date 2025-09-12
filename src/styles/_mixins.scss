@@ -1,0 +1,79 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin container {
+  width: 100%;
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+
+  @media (max-width: $breakpoint-lg) {
+    max-width: $container-lg;
+    padding: 0 $spacing-sm;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    max-width: $container-md;
+    padding: 0 $spacing-sm;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    max-width: 100%;
+    padding: 0 $spacing-xs;
+  }
+}
+
+@mixin grid($columns, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(min($columns, 3), 1fr);
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: repeat(min($columns, 2), 1fr);
+    gap: $spacing-sm;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+    gap: $spacing-sm;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hover-effect {
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

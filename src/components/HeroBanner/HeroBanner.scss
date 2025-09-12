@@ -1,0 +1,125 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.hero-banner {
+  background: linear-gradient(135deg, #4caf50 0%, #2e7d32 100%);
+  color: white;
+  padding: $spacing-xxl 0;
+  text-align: center;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  @include responsive($breakpoint-lg) {
+    min-height: 400px;
+    padding: $spacing-xl 0;
+  }
+
+  @include responsive($breakpoint-md) {
+    min-height: 350px;
+    padding: $spacing-lg 0;
+  }
+
+  @include responsive($breakpoint-sm) {
+    min-height: 300px;
+    padding: $spacing-lg $spacing-sm;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+    opacity: 0.2;
+    z-index: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+
+    @include responsive($breakpoint-sm) {
+      padding: 0 $spacing-sm;
+    }
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: $spacing-lg;
+    font-family: $font-heading;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+    @include responsive($breakpoint-lg) {
+      font-size: 3rem;
+    }
+
+    @include responsive($breakpoint-md) {
+      font-size: 2.5rem;
+      margin-bottom: $spacing-md;
+    }
+
+    @include responsive($breakpoint-sm) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.3rem;
+    margin-bottom: $spacing-xl;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+    @include responsive($breakpoint-md) {
+      font-size: 1.1rem;
+      margin-bottom: $spacing-lg;
+    }
+
+    @include responsive($breakpoint-sm) {
+      font-size: 1rem;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__button {
+    background: white;
+    color: $primary-color;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    @include responsive($breakpoint-md) {
+      padding: 12px 30px;
+      font-size: 1.1rem;
+    }
+
+    @include responsive($breakpoint-sm) {
+      padding: 10px 25px;
+      font-size: 1rem;
+      width: 100%;
+      max-width: 250px;
+    }
+
+    &:hover {
+      background: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
